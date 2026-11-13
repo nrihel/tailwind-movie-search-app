@@ -36,7 +36,7 @@ function toggleTheme() {
         ignore = true;
       };
     }
-    setLoading(true);
+    setLoading(true); 
     setError(null);
     fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${debouncedQuery}`)
       .then((response) => {
@@ -77,7 +77,7 @@ function toggleTheme() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen w-full font-sans text-neutral-100 bg-linear-to-br from-brand-950 via-neutral-900 to-black">
+    <div className="flex flex-col min-h-screen w-full font-sans text-neutral-900 dark:text-neutral-100 bg-neutral-50 dark:bg-linear-to-br dark:from-brand-950 dark:via-neutral-900 dark:to-black">
     <Navbar tab={tab} setTab={setTab} theme={theme} onToggleTheme={toggleTheme}/>
     <main className="flex-1">
       <div className="max-w-[1180px] mx-auto px-6 pt-12 pb-20">
@@ -97,11 +97,11 @@ function toggleTheme() {
             ))}
           </div>
         ) : loading ? (
-          <p className="text-center text-white/75 text-lg mt-8">Loading...</p>
+          <p className="text-center text-neutral-600 dark:text-white/75 text-lg mt-8">Loading...</p>
         ) : error ? (
-          <p className="text-center text-white/75 text-lg mt-8">{error}</p>
+          <p className="text-center text-neutral-600 dark:text-white/75 text-lg mt-8">{error}</p>
         ) : query.trim() === "" ? (
-          <p className="text-center text-white/75 text-lg mt-8">
+          <p className="text-center text-neutral-600 dark:text-white/75 text-lg mt-8">
             Start typing above to discover movies and shows.
           </p>
         ) : (

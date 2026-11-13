@@ -4,12 +4,12 @@ function MovieCard({ movie, isFavorite, onToggleFavorite }) {
       <img
         src={movie.Poster}
         alt={movie.Title}
-        className="w-full h-56 sm:h-72 object-cover block bg-neutral-800"
+        className="w-full h-56 sm:h-72 object-cover block bg-black/5 dark:bg-neutral-800"
       />
-      <h2 className="px-4 pt-4 pb-1.5 text-sm sm:text-base leading-tight text-white">
+      <h2 className="px-4 pt-4 pb-1.5 text-sm sm:text-base leading-tight text-black dark:text-white">
         {movie.Title}
       </h2>
-      <p className="px-4 pb-4 text-sm text-white/60">{movie.Year}</p>
+      <p className="px-4 pb-4 text-sm text-neutral-900 dark:text-white/60">{movie.Year}</p>
       {movie.Type && (
         <span className="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-full text-[10px] uppercase tracking-wide bg-black/60 text-white/90 backdrop-blur">
             {movie.Type}
